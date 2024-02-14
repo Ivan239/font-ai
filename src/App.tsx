@@ -1,16 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import keplerGlReducer from '@kepler.gl/reducers';
 import { Provider, useDispatch } from 'react-redux';
 import KeplerGl from '@kepler.gl/components';
 import { addDataToMap } from '@kepler.gl/actions';
-import * as schema from './schema.json';
 import { processGeojson } from '@kepler.gl/processors';
 import { enhanceReduxMiddleware } from '@kepler.gl/reducers/dist';
 import searchIcon from './searchIcon.svg';
 import spinner from './spinner.svg';
-import axios from 'axios';
 
 const initialState = {};
 const middlewares = enhanceReduxMiddleware([
@@ -34,16 +32,6 @@ function App() {
 }
 
 export default App;
-
-function getRandomInt(max: number): number {
-  return Math.floor(Math.random() * max);
-}
-
-const id = getRandomInt(10000000000);
-
-const auth = btoa(
-  `${'66e9f14f32b04a3daf9b15a5ac1046f8'}:${'13feda59-c00e-4506-a30f-2f9ef1d14689'}`,
-);
 
 const col = {
   type: 'FeatureCollection',
@@ -305,8 +293,6 @@ const Map = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
-  const [rows, setRows] = useState<string[]>([]);
-  const [lastValue, setLastValue] = useState();
 
   const searchData = (): void => {
     setLoading(true);
