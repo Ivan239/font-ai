@@ -1,0 +1,12 @@
+{
+  "cfg": {
+    "rawCollections": {
+      "Geohero Messages": [
+        "{\"id\": 0, \"turn\": 0, \"geo_json\": \"\", \"user_message\": \"I wanna build an italian restaurant in industrial setting in Southbank\"}",
+        "{\"id\": 1, \"turn\": 0, \"geo_json\": \"\", \"user_message\": \"I live in Kneller Road\"}",
+        "{\"id\": 1, \"turn\": 1, \"geo_json\": \"{}\", \"user_message\": \"I live in Kneller Road\"}"
+      ]
+    },
+    "appSettings": [{ "taskId": null, "appId": "app", "saveCollectionsName": "result-collection" }]
+  }
+}
