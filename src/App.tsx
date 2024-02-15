@@ -49,7 +49,7 @@ const Map = () => {
   const [value, setValue] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [rows, setRows] = useState<string[]>([]);
-  const [lastValue, setLastValue] = useState();
+  const [lastValue, setLastValue] = useState<string>();
 
   const searchData = (): void => {
     const colIds = {
@@ -117,7 +117,7 @@ const Map = () => {
             const json = docs?.[docs?.length - 1]?.data;
             const info = JSON.parse(json || '{}');
             const geo = JSON.parse(info?.geo_json || {});
-            setLastValue(geo);
+            setLastValue(JSON.stringify(geo));
             dispatch(
               addDataToMap({
                 datasets: {
